@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digittal Daily - Your favourite News app is here</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" type="jpg" href="image/logo.jpg">
+</head>
+
+<body>
+    <!-- style="background-color:#001d3c !important;" -->
+    <nav class="navbar navbar-expand-lg bg-dark"  style="background: url('image/hero_bg.webp');background-position: center;">
+        <div class="container-fluid navbar-dark">
+            <a class="navbar-brand" href="index.html">The Digital Daily</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#newsBox">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('pithampur')">Pithampur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('coding')">Coding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('AI')">AI</a>
+                    </li>
+                </ul>
+                <div class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="e.g. Coding" aria-label="Search" id="searchText">
+                    <button class="btn btn-outline-info" id="searchButton" type="submit">Search</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="heroSection">
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                    class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                    class="active" aria-current="true"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="image/bg5.jpg" class="d-block w-100" alt="...">
+                    <div class="container">
+                        <div class="carousel-caption text-center" style="position: absolute;top: 38%;">
+                            <h5>Technology</h5>
+                            <h1>Building the future</h1>
+                            <p class="opacity-75 text-center">the application of scientific knowledge to the practical aims of human life.</p>
+                            <p><a class="btn btn-lg btn-info" href="#newsBox" onclick="fetchNews('Technology')">Read more...</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active carousel-item-start">
+                    <img src="image/bg6.jpg" class="d-block w-100" alt="...">
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h5 style="margin: 15px;">Bitcoin</h5>
+                            <h1>Cryptocurrency just got even better.</h1>
+                            <p class="opacity-75" style="font-size: 13.5px;">A virtual currency designed to act as money and a form of payment outside the control of any one person, group, or entity.</p>
+                            <p><a class="btn btn-lg btn-info" href="#newsBox" onclick="fetchNews('bitcoin')">Read more...</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-next carousel-item-start">
+                    <img src="image/bg8.jpg" class="d-block w-100" alt="...">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h5 >Nature</h5>
+                            <h1>Go green, breathe clean.</h1>
+                            <p class="opacity-75" style="font-size: 14px;">Nature can refer to the general realm of living plants and animals, and in some cases to the processes associated with inanimate object</p>
+                            <p><a class="btn btn-lg btn-info" href="#newsBox" onclick="fetchNews('Nature')">Read more...</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <div class="container" id="newsBox">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="newsContainer">
+
+        </div>
+    </div>
+
+    <template id="newsTemplate">
+        <!-- card start here -->
+        <a href="#" style="text-decoration: none;" id="readMore">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="" style="height: 250px;" alt="" id="newsImg">
+                    <div class="card-body">
+                        <small id="source">source</small>
+                        <h4 id="title">Title</h4>
+                        <p class="card-text" id="description">This is a wider card with supporting text below as a
+                            natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-end align-items-center">
+                            <small id="newsDate">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- card ends here -->
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

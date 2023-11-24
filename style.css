@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: linear-gradient(to right,#001923 , #00203c); */
+    background: url(image/hero_bg.webp);
+    object-fit: cover;
+ }
+
+.container {
+    margin-top: 30px;
+}
+
+.carousel-item img {
+    height: 75vh;
+}
+
+.card-body{
+    max-height: 260px;
+    min-height: 255px;
+    /* background: #001b39; */
+    background: url('image/hero_bg.webp');
+    background-position: center;
+    color: white;
+}
+
+.card-text{
+    max-height: 50px;
+    overflow: hidden;
+}
+.col{
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+.col:hover{
+    box-shadow: #5b5b5e  0px 5px 15px;
+    transform: translateY(-5px);
+}
+ 
