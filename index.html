@@ -13,8 +13,7 @@
 
 <body>
     <!-- style="background-color:#001d3c !important;" -->
-    <nav class="navbar navbar-expand-lg bg-dark"
-        style="background: url('image/hero_bg.webp');background-position: center;">
+    <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid navbar-dark">
             <a class="navbar-brand" href="index.html">The Digital Daily</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,13 +27,13 @@
                         <a class="nav-link active" aria-current="page" href="#newsBox">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="fetchNews('pithampur')">Pithampur</a>
+                        <a class="nav-link" href="#newsBox" onclick="fetchNews('pithampur')">Pithampur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="fetchNews('coding')">Coding</a>
+                        <a class="nav-link" href="#newsBox" onclick="fetchNews('coding')">Coding</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="fetchNews('AI')">AI</a>
+                        <a class="nav-link" href="#newsBox" onclick="fetchNews('AI')">AI</a>
                     </li>
                 </ul>
                 <div class="d-flex" role="search">
@@ -134,6 +133,19 @@
         </a>
         <!-- card ends here -->
     </template>
+
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Home</a></li>
+                <li class="nav-item"><a href="https://www.linkedin.com/in/sawankushwah/" class="nav-link px-2 text-white">Linked In</a></li>
+                <li class="nav-item"><a href="https://github.com/Sawan-Kushwah" class="nav-link px-2 text-white">GitHub</a></li>
+                <li class="nav-item"><a href="https://sawan-kushwah.github.io/portfolio/" class="nav-link px-2 text-white">Portfolio</a></li>
+            </ul>
+            <p class="text-center text-white">© 2023 SawanKushwah, India</p>
+        </footer>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

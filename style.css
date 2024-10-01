@@ -8,7 +8,7 @@ body {
     /* background: linear-gradient(to right,#001923 , #00203c); */
     background: url(image/hero_bg.webp);
     object-fit: cover;
- }
+}
 
 .container {
     margin-top: 30px;
@@ -18,7 +18,7 @@ body {
     height: 75vh;
 }
 
-.card-body{
+.card-body {
     max-height: 260px;
     min-height: 255px;
     /* background: #001b39; */
@@ -27,16 +27,26 @@ body {
     color: white;
 }
 
-.card-text{
+.card-text {
     max-height: 50px;
     overflow: hidden;
 }
-.col{
+
+.col {
     margin: 10px;
     transition: all 0.3s ease;
 }
-.col:hover{
-    box-shadow: #5b5b5e  0px 5px 15px;
+
+.col:hover {
+    box-shadow: #5b5b5e 0px 5px 15px;
     transform: translateY(-5px);
 }
- 
+
+.navbar {
+    background: url('image/hero_bg.webp');
+    background-position: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
